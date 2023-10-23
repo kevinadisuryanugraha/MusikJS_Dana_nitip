@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Import assets (gitar)
+        let audioC = new Audio();
+        audioC.src = "audio/C.mp3";
+        let audioAm = new Audio();
+        audioAm.src = "audio/Am.mp3";
+        let audioDm = new Audio();
+        audioDm.src = "audio/Dm.mp3";
+        let audioG = new Audio();
+        audioG.src = "audio/G.mp3";
+        // Import assets (piano)
+        let audioDo = new Audio();
+        audioDo.src = "piano/Do.mp3";
+        let audioRe = new Audio();
+        audioRe.src = "piano/Re.mp3";
+        let audioMi = new Audio();
+        audioMi.src = "piano/Mi.mp3";
+        let audioFa = new Audio();
+        audioFa.src = "piano/Fa.mp3";
+        let audioSo = new Audio();
+        audioSo.src = "piano/So.mp3";
+        let audioLa = new Audio();
+        audioLa.src = "piano/La.mp3";
+        let audioSi = new Audio();
+        audioSi.src = "piano/Si.mp3";
+        let audioDo2 = new Audio();
+        audioDo2.src = "piano/Do2.mp3";
+        // Import assets (drum)
+        let audiobass = new Audio();
+        audiobass.src = "drum/bass.mp3";
+        let audiocrash = new Audio();
+        audiocrash.src = "drum/crash.mp3";
+        let audiofloorTom = new Audio();
+        audiofloorTom.src = "drum/floorTom.mp3";
+        let audiohihat = new Audio();
+        audiohihat.src = "drum/hihat.mp3";
+        let audiohihatFoot = new Audio();
+        audiohihatFoot.src = "drum/hihatFoot.mp3";
+        let audiohihatOpen = new Audio();
+        audiohihatOpen.src = "drum/hihatOpen.mp3";
+        let audioride = new Audio();
+        audioride.src = "drum/ride.mp3";
+        let audioshareDrum = new Audio();
+        audioshareDrum.src = "drum/shareDrum.mp3";
+        let audioshareStick = new Audio();
+        audioshareStick.src = "drum/shareStick.mp3";
+        let audiotom1 = new Audio();
+        audiotom1.src = "drum/tom1.mp3";
+        let audiotom2 = new Audio();
+        audiotom2.src = "drum/tom2.mp3";
+    </script>
+</head>
+<body>
+    <div id="gitar">
+        <div onclick="playGitar('C')">C</div>
+        <div onclick="playGitar('Am')">Am</div>
+        <div onclick="playGitar('Dm')">Dm</div>
+        <div onclick="playGitar('G')">G</div>
+    </div>
+
+    <div class="grid grid-cols-7 gap-2" id="piano">
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('Do')">Do</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('Re')">Re</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('Mi')">Mi</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('Fa')">Fa</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('So')">So</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('La')">La</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 border-r-black cursor-pointer" onclick="playPiano('Si')">Si</div>
+        <div class="bg-white h-80 w-24 flex justify-center text-xl pt-64 hover:bg-slate-200 drop-shadow-xl border-2 cursor-pointer" onclick="playPiano('Do2')">Do2</div>
+
+        <div onclick="playPiano('fa')" class="w-16 h-48 bg-black border border-black flex items-end justify-center absolute top-[59rem] left-[27.5rem] text-white ">C#</div>
+        <div onclick="playPiano('fa')" class="w-16 h-48 bg-black border border-black flex items-end justify-center absolute top-[59rem] left-[33.5rem] text-white">D#</div>
+        <div onclick="playPiano('fa')" class="w-16 h-48 bg-black border border-black flex items-end justify-center absolute top-[59rem] right-[34rem] text-white">F#</div>
+        <div onclick="playPiano('fa')" class="w-16 h-48 bg-black border border-black flex items-end justify-center absolute top-[59rem] right-[40rem] text-white">G#</div>
+        <div onclick="playPiano('fa')" class="w-16 h-48 bg-black border border-black flex items-end justify-center absolute top-[59rem] right-[46rem] text-white">A#</div>
+    
+
+    </div>
+    
+    <div id="drum">
+        <div onclick="playDrum('bass')">bass</div>
+        <div onclick="playDrum('crash')">crash</div>
+        <div onclick="playDrum('floorTom')">floorTom</div>
+        <div onclick="playDrum('hihatFoot')">hihatFoot</div>
+        <div onclick="playDrum('hihatOpen')">hihatOpen</div>
+        <div onclick="playDrum('hihat')">hihat</div>
+        <div onclick="playDrum('ride')">ride</div>
+        <div onclick="playDrum('shareDrum')">shareDrum</div>
+        <div onclick="playDrum('shareStick')">shareStick</div>
+        <div onclick="playDrum('tom1')">tom1</div>
+        <div onclick="playDrum('tom2')">tom1</div>
+    </div>
+
+
+    <script>
+        let piano = document.getElementById('piano');
+        piano.className = "flex bg-gray-500 h-screen justify-center items-center"
+
+        let piano_children = piano.children;
+
+        // for(let i = 0; i < piano_children.length; i++) {
+        //     piano_children[i].className = "p-3 mx-2 bg-red-500 hover:bg-red-700 rounded-lg text-white w-16 h-16 flex justify-center items-center cursor-pointer"
+        // }
+
+        function playPiano(chord) {
+            switch (chord) {
+                case 'Do':
+                    audioDo.load();
+                    audioDo.pause();
+                    // audioDo.currentTime = 0;
+                    audioDo.play();
+                    break
+                case 'Re':
+                    audioRe.load();
+                    audioRe.pause();
+                    audioRe.play();
+                    break
+                case 'Mi':
+                    audioMi.load();
+                    audioMi.pause();
+                    audioMi.play();
+                    break
+                case 'Fa':
+                    audioFa.load();
+                    audioFa.pause();
+                    audioFa.play();
+                    break
+                case 'So':
+                    audioSo.load();
+                    audioSo.pause();
+                    audioSo.play();
+                    break
+                case 'La':
+                    audioLa.load();
+                    audioLa.pause();
+                    audioLa.play();
+                    break
+                case 'Si':
+                    audioSi.load();
+                    audioSi.pause();
+                    audioSi.play();
+                    break
+                case 'Do2':
+                    audioDo2.load();
+                    audioDo2.pause();
+                    audioDo2.play();
+                    break
+            }
+        }
+        document.addEventListener("keypress", function() {
+            switch(event.key) {
+                case "q":
+                    playPiano("Do");
+                    break;
+                case "w":
+                    playPiano("Re");
+                    break;
+                case "e":
+                    playPiano("Mi");
+                    break;
+                case "r":
+                    playPiano("Fa");
+                    break;
+                case "t":
+                    playPiano("So");
+                    break;
+                case "y":
+                    playPiano("La");
+                    break;
+                case "u":
+                    playPiano("Si");
+                    break;
+                case "i":
+                    playPiano("Do2");
+                    break;
+            }  
+            
+        })
+        let gitar = document.getElementById('gitar');
+        gitar.className = "flex bg-gray-500 h-screen justify-center items-center";
+
+        let gitar_children = gitar.children;
+
+        for(let i = 0; i < gitar_children.length; i++) {
+            gitar_children[i].className = "p-3 mx-2 bg-red-500 hover:bg-red-700 rounded-lg text-white w-16 h-16 flex justify-center items-center cursor-pointer";
+        }
+
+        function playGitar(chord) {
+            switch (chord) {
+                case 'C':
+                    audioC.load();
+                    audioC.pause();
+                    // audioC.currentTime = 1;
+                    audioC.play();
+                    break
+                case 'Am':
+                    audioAm.load();
+                    audioAm.pause();
+                    // audioAm.currentTime = 1;
+                    audioAm.play();
+                    break
+                case 'Dm':
+                    audioDm.load();
+                    audioDm.pause();
+                    // audioDm.currentTime = 1;
+                    audioDm.play();
+                    break
+                case 'G':
+                    audioG.load();
+                    audioG.pause();
+                    // audioG.currentTime = 1;
+                    audioG.play();
+                    break
+            
+            }
+        } 
+
+        document.addEventListener("keypress", function() {
+            switch(event.key) {
+                case "a":
+                    playGitar("C");
+                    break;
+                case "s":
+                    playGitar("Am");
+                    break;
+                case "d":
+                    playGitar("Dm");
+                    break;
+                case "f":
+                    playGitar("G");
+                    break
+            }   
+            
+        })
+
+        let drum = document.getElementById('drum');
+        drum.className = "flex bg-gray-500 h-screen justify-center items-center"
+
+        let drum_children = drum.children;
+
+        for(let i = 0; i < drum_children.length; i++) {
+            drum_children[i].className = "p-3 mx-2 bg-red-500 hover:bg-red-700 rounded-lg text-white w-16 h-16 flex justify-center items-center cursor-pointer"
+        }
+
+        function playDrum(chord) {
+            switch (chord) {
+                case 'bass':
+                    audiobass.load();
+                    audiobass.pause();
+                    // audiobass.currentTime = 0;
+                    audiobass.play();
+                    break
+                case 'crash':
+                    audiocrash.load();
+                    audiocrash.pause();
+                    audiocrash.play();
+                    break
+                case 'Mi':
+                    audioMi.load();
+                    audioMi.pause();
+                    audioMi.play();
+                    break
+                case 'Fa':
+                    audioFa.load();
+                    audioFa.pause();
+                    audioFa.play();
+                    break
+                case 'So':
+                    audioSo.load();
+                    audioSo.pause();
+                    audioSo.play();
+                    break
+                case 'La':
+                    audioLa.load();
+                    audioLa.pause();
+                    audioLa.play();
+                    break
+                case 'Si':
+                    audioSi.load();
+                    audioSi.pause();
+                    audioSi.play();
+                    break
+                case 'Do2':
+                    audioDo2.load();
+                    audioDo2.pause();
+                    audioDo2.play();
+                    break
+            }
+        }
+        document.addEventListener("keypress", function() {
+            switch(event.key) {
+                case "q":
+                    playPiano("Do");
+                    break;
+                case "w":
+                    playPiano("Re");
+                    break;
+                case "e":
+                    playPiano("Mi");
+                    break;
+                case "r":
+                    playPiano("Fa");
+                    break;
+                case "t":
+                    playPiano("So");
+                    break;
+                case "y":
+                    playPiano("La");
+                    break;
+                case "u":
+                    playPiano("Si");
+                    break;
+                case "i":
+                    playPiano("Do2");
+                    break;
+            }  
+            
+        })
+    </script>
+</body>
+</html>
